@@ -36,6 +36,19 @@ const tasks = [
   },
 ];
 
+/*
 console.log(tasks[0].title);
 console.log(tasks[1].priority);
 console.log(tasks[2].completed);
+
+*/
+
+function displayTask(task) {
+  console.log("Task: " + task.title);
+  console.log("Priority: " + task.priority);
+  console.log("Category: " + task.category);
+}
+
+displayTask(tasks[0]);
+displayTask(tasks[1]);
+displayTask(tasks[2]);
