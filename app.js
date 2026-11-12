@@ -31,6 +31,22 @@ function displayTask(task) {
   console.log("Task: " + task.title);
   console.log("Priority: " + task.priority);
   console.log("Category: " + task.category);
+
+  if (task.completed === true) {
+    console.log("Status: Completed");
+  } else {
+    console.log("Status:Pending");
+  }
+
+  if (task.priority === "High") {
+    console.log("Priority Level: Urgent");
+  } else if (task.priority === "Medium") {
+    console.log("Priority Level: Normal");
+  } else {
+    console.log("Priority Level: Low");
+  }
+
+  console.log("---------------------------");
 }
 
 const newTask = {
