@@ -1,14 +1,5 @@
 // PERSONAL TASK MANAGER
 
-const myTask = {
-  id: 1,
-  title: "N1 lesson 1",
-  description: "Japanese class N1",
-  category: "Japanese Language",
-  priority: "High",
-  completed: true,
-};
-
 const tasks = [
   {
     id: 2,
@@ -36,19 +27,25 @@ const tasks = [
   },
 ];
 
-/*
-console.log(tasks[0].title);
-console.log(tasks[1].priority);
-console.log(tasks[2].completed);
-
-*/
-
 function displayTask(task) {
   console.log("Task: " + task.title);
   console.log("Priority: " + task.priority);
   console.log("Category: " + task.category);
 }
 
-displayTask(tasks[0]);
-displayTask(tasks[1]);
-displayTask(tasks[2]);
+const newTask = {
+  id: 5,
+  title: "N1 lesson 5",
+  description: "Japanese class N1",
+  category: "Japanese Language",
+  priority: "Medium",
+  completed: false,
+};
+
+tasks.push(newTask);
+
+console.log("Total tasks: " + tasks.length);
+
+tasks.forEach(function (task) {
+  displayTask(task);
+});
