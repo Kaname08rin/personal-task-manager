@@ -132,7 +132,63 @@ const searchedTask = tasks.find(function (task) {
 console.log("Searched task:");
 console.log(searchedTask);
 
-// Confirm that filter() did not remove or change items in the original tasks array.
+// get the titles
+
+const taskTitles = tasks.map(function (task) {
+  return task.title;
+});
+
+console.log("Task titles: ");
+console.log(taskTitles);
+
+// count completed tasks
+const completedCount = tasks.reduce(function (total, task) {
+  if (task.completed === true) {
+    return total + 1;
+  }
+  return total;
+}, 0);
+
+console.log("Completed tasks: " + completedCount);
+
+// count pending tasks
+const pendingCount = tasks.reduce(function (total, task) {
+  if (task.completed === false) {
+    return total + 1;
+  }
+
+  return total;
+}, 0);
+
+console.log("Pending tasks: " + pendingCount);
+
+// get each task's priority
+const taskPriority = tasks.map(function (task) {
+  return task.priority;
+});
+
+console.log("Task priority: ");
+console.log(taskPriority);
+
+// count the number of high priority
+const highPriorityCount = tasks.reduce(function (total, task) {
+  if (task.priority === "High") {
+    return total + 1;
+  }
+
+  return total;
+}, 0);
+
+console.log("High Priority: " + highPriorityCount);
+
+// Count all available tasks
+const availableTaskCount = tasks.reduce(function (total, task) {
+  return total + 1;
+}, 0);
+
+console.log("Available tasks: " + availableTaskCount);
+
+// Confirm that the original tasks array has no changes
 tasks.forEach(function (task) {
   displayTask(task);
 });
