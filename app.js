@@ -27,6 +27,8 @@ const tasks = [
   },
 ];
 
+//display task and remind the urgent items
+
 function displayTask(task) {
   console.log("Task: " + task.title);
   console.log("Priority: " + task.priority);
@@ -82,6 +84,55 @@ tasks.forEach(function (task) {
   displayTask(task);
 });
 
-console.log(5 !== 3);
-console.log(5 > 3);
-console.log(2 <= 5);
+//pending tasks
+
+const pendingTasks = tasks.filter(function (task) {
+  return task.completed === false;
+});
+
+console.log("Pending tasks:");
+pendingTasks.forEach(function (task) {
+  displayTask(task);
+});
+
+//select a task
+const selectedTask = tasks.find(function (task) {
+  return task.id === 4;
+});
+
+console.log("Selected tasks:");
+console.log(selectedTask);
+
+// High-priority tasks
+const highPriorityTasks = tasks.filter(function (task) {
+  return task.priority === "High";
+});
+
+console.log("High-priority tasks");
+highPriorityTasks.forEach(function (task) {
+  displayTask(task);
+});
+
+// Completed tasks
+const completedTasks = tasks.filter(function (task) {
+  return task.completed === true;
+});
+
+console.log("Completed tasks:");
+completedTasks.forEach(function (task) {
+  displayTask(task);
+});
+
+// searchedTasks
+
+const searchedTask = tasks.find(function (task) {
+  return task.id === 1;
+});
+
+console.log("Searched task:");
+console.log(searchedTask);
+
+// Confirm that filter() did not remove or change items in the original tasks array.
+tasks.forEach(function (task) {
+  displayTask(task);
+});
