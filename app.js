@@ -192,3 +192,52 @@ console.log("Available tasks: " + availableTaskCount);
 tasks.forEach(function (task) {
   displayTask(task);
 });
+
+// Check the High-priority tasks
+const hasHighPriority = tasks.some(function (task) {
+  return task.priority === "High";
+});
+
+console.log("Has high priority task: " + hasHighPriority);
+
+// Check whether all tasks are completed
+const allCompleted = tasks.every(function (task) {
+  return task.completed === true;
+});
+
+console.log("Are all tasks completed? " + allCompleted);
+
+// Check if there are pending tasks
+const hasPendingTasks = tasks.some(function (task) {
+  return task.completed === false;
+});
+
+console.log("Are there pending tasks? " + hasPendingTasks);
+
+// Check if all tasks have category
+const allHaveCategory = tasks.every(function (task) {
+  return task.category !== "";
+});
+
+console.log("Do all tasks have a category? " + allHaveCategory);
+
+//Check if one task has Medium priority
+const mediumPriority = tasks.some(function (task) {
+  return task.priority === "Medium";
+});
+
+console.log("Is there one task with Medium priority? " + mediumPriority);
+
+//Check whether all tasks have priority set to "High", "Medium", or "Low".
+const allPrioritySet = tasks.every(function (task) {
+  return (
+    task.priority === "High" ||
+    task.priority === "Medium" ||
+    task.priority === "Low"
+  );
+});
+
+console.log(
+  "Are all tasks priority already set to High, Medium or Low? " +
+    allPrioritySet,
+);
